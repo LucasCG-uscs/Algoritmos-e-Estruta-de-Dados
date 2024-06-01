@@ -1,36 +1,41 @@
-//Feito por Lucas Costa Guimarães
-//programa que identifica e imprime o valor que mais se repete em um vetor de 30 elementos. Programa com erro =(
+//Feito por Lucas Costa Guimarães e ajustado por uma IA.
+//programa que recebe uma lista de 30 elementos, armazena os valores em um vetor e em seguida informa qual o numero mais repetido na lista de valores e quantas vezes ele se repetiu
 #include<stdio.h>
+
 int main(){
-
     int vet[30];
-    int i=0,j=0,contador=0,maior=0,mais_repetido=0;
+    int i, j, contador, maior=0, mais_repetido=0;
 
+    // Ler o primeiro valor
     printf("Informe o primeiro valor de uma lista de 30 valores:");
-    scanf("%d",&vet[0]);
+    scanf("%d", &vet[0]);
 
-    for(i=1;i<30;i++){
-        printf("Informe o proximo valor:");
-        scanf("%d",&vet[i]);
+    // Ler os próximos 29 valores
+    for(i=1; i<30; i++){
+        printf("Informe o próximo valor:");
+        scanf("%d", &vet[i]);
     }
-    for(j=0;j<30;j++){
-        for(i=0;i<30;i++){
-            if(vet[j]==vet[i+1]){
+
+    // Verificar qual valor é mais repetido
+    for(j=0; j<30; j++){
+        contador = 1; // Inicializar contador com 1 para incluir o próprio elemento
+        for(i=0; i<30; i++){
+            if(i != j && vet[j] == vet[i]){
                 contador++;
             }
         }
-        if(contador>maior){
-            maior=contador;
-            mais_repetido=vet[j];
+        if(contador > maior){
+            maior = contador;
+            mais_repetido = vet[j];
         }
     }
-    
-    if(contador == 0){
-        printf("Nenhum elemento do vetor se repete !");
-    }
-    else{
-        printf("Valor mais repetido no vetor: %d\nNumero de vezes repetido:%d",mais_repetido,contador);
+
+    // Exibir resultado
+    if(maior == 1){
+        printf("Nenhum elemento do vetor se repete!\n");
+    } else {
+        printf("Valor mais repetido no vetor: %d\nNúmero de vezes repetido: %d\n", mais_repetido, maior);
     }
 
-return 0;
+    return 0;
 }

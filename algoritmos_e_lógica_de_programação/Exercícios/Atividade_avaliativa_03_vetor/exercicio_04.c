@@ -1,5 +1,5 @@
 //Feito por Lucas Costa Guimarães
-//programa que recebe 8 valores, os inseri em um vetor e os imprime na ordem inversa. programa com erro =(
+//programa que recebe 8 valores, os inseri em um vetor e os imprime na ordem inversa.
 #include<stdio.h>
 int main(){
 
@@ -11,7 +11,7 @@ int main(){
 
     for(i=1;i<8;i++){
         printf("Informe o proximo valor:");
-        scanf("%d",&vet[1]);
+        scanf("%d",&vet[i]);
     }
 
     printf("Ordem inversa do vetor:\n");

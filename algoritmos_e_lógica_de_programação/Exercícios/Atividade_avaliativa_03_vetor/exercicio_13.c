@@ -1,5 +1,5 @@
 //Feito por Lucas Costa Guimarães
-//programa que recebe um tamanho de um vetor, recebe os elementos do vetor e os imprime. programa com erro =(
+//programa que recebe um tamanho de um vetor, recebe os elementos do vetor e os imprime na ordem inversa 
 #include<stdio.h>
 int main(){
 
@@ -16,7 +16,7 @@ int main(){
 
     printf("Ordem inversa do vetor:\n");
 
-    for(i=tamanho;i>=0;i--){
+    for(i=tamanho-1;i>=0;i--){
         printf("%d\n",vet[i]);
     }
 
